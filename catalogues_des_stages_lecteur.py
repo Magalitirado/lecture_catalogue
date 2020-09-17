@@ -120,32 +120,33 @@ def Set_catalogue():
     element = []
     mobilites = []
 
-    for line in lire:
-        #print('line:['+line+']')        
+    for line in lire:       
         if lineIndex % 7 == 0:
             if element:
                 print(element)
                 mobilites.append(Mobilite(element[0],element[1],element[2],
                     element[3],element[4],element[5],element[6]))
                 element = []
-            #print(line[:-1])
             element.append(line[:-1])
         elif (lineIndex - 3) % 7 == 0:
-            split = line.split(',')
-            #print('element 1 : '+ split[0])
-            #print('element 2 : '+ split[1][1:-1])           
+            split = line.split(',')         
             element.append(split[0])
             element.append(split[1][1:-1])
         elif (lineIndex - 6) % 7 != 0:
-            #print('element 3 : '+ line[:-1])
             element.append(line[:-1])
-        print(lineIndex)
         lineIndex += 1
     mobilites.append(Mobilite(element[0],element[1],element[2],element[3],
         element[4],element[5],element[6]))
 
     existe = False
     pays = []
+    
+"""
+J'ai un problème avec la boucle for qui suit car j'aimerais faire en sorte que la liste pays ne contienne qu'un exemplaire de chaque pays.
+Donc là par exemple dans le fichier catalogue_mobilite il y a 2 mobilités au Pays de Galles donc je voudrais que Pays de Galles ne soit qu'une fois dans la liste.
+Or ça ne fonctionne pas comme je l'ai fait et je ne sais pas comment faire autrement, et je pense que c'est le dernier soucis sur ce code car autrement tout fonctionne !
+"""
+
     for _ in mobilites:
         if pays:
             for x in pays:
@@ -160,9 +161,8 @@ def Set_catalogue():
     for x in pays:
         lu.write('\\subsection{Partir au '+x+'}\n\n')
         for _ in mobilites:
-            print(_.pays)
             if _.pays[:-1] == x:
-                lecture_mobilite(lu, _) #je ne comprends pas pourquoi ça m'écrit le truc 4 fois
+                lecture_mobilite(lu, _)
     
             
     lire.close()
