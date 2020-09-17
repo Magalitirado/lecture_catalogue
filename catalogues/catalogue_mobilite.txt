@@ -1,0 +1,20 @@
+Prénom NOM
+2016/2017
+S5 et S6
+Cardiff, Pays de Galles
+Cours 1; Cours 2; Cours 3
+prenom.nom@domaine.fr
+
+Prénom 2 NOM 2
+2015
+S5
+Montréal, Canada
+Cours 1; Cours 2; Cours 3; Cours 4
+prenom2.nom2@domaine.fr
+
+Prénom 3 NOM 3
+2014/2015
+S5 et S6
+Cardiff, Pays de Galles
+Cours 1; Cours 2; Cours 3
+prenom3.nom3@domaine.fr
